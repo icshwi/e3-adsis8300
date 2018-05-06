@@ -89,3 +89,55 @@ SOURCES += $(DRV)/sis8300drv_utils.c
 
 db: 
 
+
+
+TEMPLATES += $(APPDB)/SIS8300.template
+TEMPLATES += $(APPDB)/SIS8300N.template
+
+
+USR_INCLUDES += -I$(where_am_I)$(APPSRC)
+
+
+HEADERS += $(APPSRC)/SIS8300.h
+SOURCES += $(APPSRC)/SIS8300.cpp
+DBDS    += $(APPSRC)/SIS8300Support.dbd
+
+
+
+DRV:=vendor/ess/lib
+
+USR_INCLUDES += -I$(where_am_I)$(DRV)
+
+HEADERS += $(DRV)/sis8300drv.h
+HEADERS += $(DRV)/sis8300_defs.h
+HEADERS += $(DRV)/sis8300_reg.h
+HEADERS += $(DRV)/sis8300drv_utils.h
+HEADERS += $(DRV)/sis8300drv_list.h
+
+# HEADERS += $(DRV)/sis8300_defs.h
+# HEADERS += $(DRV)/sis8300drv_ad9510.h
+# HEADERS += $(DRV)/sis8300drv_flash.h
+# HEADERS += $(DRV)/sis8300drv.h
+# HEADERS += $(DRV)/sis8300drv_list.h
+# HEADERS += $(DRV)/sis8300drv_rtm.h
+# HEADERS += $(DRV)/sis8300drv_utils.h
+# HEADERS += $(DRV)/sis8300_reg.h
+
+
+SOURCES += $(DRV)/sis8300drv.c
+SOURCES += $(DRV)/sis8300drv_ad9510.c
+SOURCES += $(DRV)/sis8300drv_flash.c
+SOURCES += $(DRV)/sis8300drv_rtm.c
+SOURCES += $(DRV)/sis8300drv_utils.c
+
+
+
+
+## This RULE should be used in case of inflating DB files 
+## db rule is the default in RULES_DB, so add the empty one
+## Please look at e3-mrfioc2 for example.
+
+db: 
+
+
+.PHONY: db 
