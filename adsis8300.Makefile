@@ -83,14 +83,6 @@ SOURCES += $(DRV)/sis8300drv_utils.c
 
 
 
-## This RULE should be used in case of inflating DB files 
-## db rule is the default in RULES_DB, so add the empty one
-## Please look at e3-mrfioc2 for example.
-
-db: 
-
-
-
 TEMPLATES += $(APPDB)/SIS8300.template
 TEMPLATES += $(APPDB)/SIS8300N.template
 
@@ -131,7 +123,8 @@ SOURCES += $(DRV)/sis8300drv_rtm.c
 SOURCES += $(DRV)/sis8300drv_utils.c
 
 
-
+USR_LIBS += udev
+USR_LIBS += rt
 
 ## This RULE should be used in case of inflating DB files 
 ## db rule is the default in RULES_DB, so add the empty one
