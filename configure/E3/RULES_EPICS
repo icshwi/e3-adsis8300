@@ -10,7 +10,7 @@ epics:
 #	$(QUIET)echo "SNCSEQ=$(M_SNCSEQ)"             >> $(TOP)/$(E3_MODULE_SRC_PATH)/configure/RELEASE
 	$(QUIET)echo "CHECK_RELEASE = YES"              > $(TOP)/$(E3_MODULE_SRC_PATH)/configure/CONFIG_SITE
 #	$(QUIET)echo "INSTALL_LOCATION=$(M_DEVLIB2)"  >> $(TOP)/$(E3_MODULE_SRC_PATH)/configure/CONFIG_SITE
-	$(SUDOBASH) "$(MAKE) -C $(E3_MODULE_SRC_PATH)"
+#	$(SUDOBASH) "$(MAKE) -C $(E3_MODULE_SRC_PATH)"
 
 epics-clean:
 	$(SUDOBASH) "$(MAKE) -C $(E3_MODULE_SRC_PATH) clean"

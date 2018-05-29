@@ -1,0 +1,18 @@
+
+E3_TOOLS_SRC_PATH:=$(E3_KMOD_SRC_PATH)/..
+
+TOOLS_MAKEFILE:=tools.Makefile
+
+tools: tools_conf
+	$(SUDOBASH) "$(MAKE) -C $(E3_TOOLS_SRC_PATH) -f $(TOOLS_MAKEFILE) build"
+
+tools_conf:
+	@echo ""
+	install -m 644 $(TOP)/$(TOOLS_MAKEFILE)  $(E3_TOOLS_SRC_PATH)/
+	@echo ""
+	
+tools_clean: tools_conf
+	$(SUDOBASH) "$(MAKE) -C $(E3_TOOLS_SRC_PATH)  -f $(TOOLS_MAKEFILE) clean"
+
+
+.PHONY: tools_conf tools tools_clean
