@@ -18,6 +18,9 @@ ASYN_DEP_VERSION:=4.33.0
 # the default - latest version will be used
 #E3_SEQUENCER_NAME:=sequencer
 #E3_SEQUENCER_VERSION:=2.1.21
+
+
+
 #
 # In most case, we don't need to touch the following variables.
 #
@@ -25,6 +28,9 @@ ASYN_DEP_VERSION:=4.33.0
 E3_MODULE_NAME:=$(EPICS_MODULE_NAME)
 E3_MODULE_SRC_PATH:=adsis8300
 E3_MODULE_MAKEFILE:=$(EPICS_MODULE_NAME).Makefile
+
+
+E3_KMOD_SRC_PATH:=$(E3_MODULE_SRC_PATH)/vendor/ess/driver
 
 
 # The definitions shown below can also be placed in an untracked CONFIG_MODULE.local
