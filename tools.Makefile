@@ -43,7 +43,7 @@ build: $(BINS)
 	@echo $(BINS_SRCS)
 
 sis8300drv_acq: sis8300drv_acq.o $(DRV_OBJECTS)
-	$(LINK.c) $^ $(LOADLIBES) $(LDLIBS) -o bin/$@
+	$(LINK.c) $^ $(LOADLIBES) $(LDLIBS) -o $@
 
 sis8300drv_flashfw: sis8300drv_flashfw.o  $(DRV_OBJECTS)
 	$(LINK.c) $^ $(LOADLIBES) $(LDLIBS) -o $@

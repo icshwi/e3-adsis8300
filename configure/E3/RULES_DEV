@@ -28,6 +28,9 @@ devmodules_install: nonexists
 devmodules_clean: nonexists
 devsetup: nonexists
 devsetup_clean: nonexists
+devtools: nonexists
+devtools_conf: nonexists
+devtools_clean: nonexists
 nonexists:
 	$(QUIET)echo ""
 	$(QUIET)echo "------------------------------------------------------------"
@@ -54,6 +57,9 @@ devmodules_install: modules_install
 devmodules_clean: modules_clean
 devsetup: setup
 devsetup_clean: setup_clean
+devtools: tools
+devtools_conf: tools_conf
+devtools_clean: tools_clean
 endif
 
 

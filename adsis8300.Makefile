@@ -17,8 +17,8 @@
 # 
 # Author  : Jeong Han Lee
 # email   : han.lee@esss.se
-# Date    : Tuesday, May 29 17:12:06 CEST 2018
-# version : 0.0.1
+# Date    : Wednesday, May 30 10:49:50 CEST 2018
+# version : 0.0.2
 #
 
 where_am_I := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
@@ -79,21 +79,12 @@ SOURCES += $(SIS8300DRV)/sis8300drv_utils.c
 
 
 
-BINS += $(where_am_I)$(SIS8300VENDOR_SRC)/sis8300drv_acq
-BINS += $(where_am_I)$(SIS8300VENDOR_SRC)/sis8300drv_flashfw
-BINS += $(where_am_I)$(SIS8300VENDOR_SRC)/sis8300drv_i2c_rtm
-BINS += $(where_am_I)$(SIS8300VENDOR_SRC)/sis8300drv_irq
-BINS += $(where_am_I)$(SIS8300VENDOR_SRC)/sis8300drv_mem
-BINS += $(where_am_I)$(SIS8300VENDOR_SRC)/sis8300drv_mmap
-BINS += $(where_am_I)$(SIS8300VENDOR_SRC)/sis8300drv_out
-BINS += $(where_am_I)$(SIS8300VENDOR_SRC)/sis8300drv_perf
-BINS += $(where_am_I)$(SIS8300VENDOR_SRC)/sis8300drv_reg
-BINS += $(where_am_I)$(SIS8300VENDOR_SRC)/sis8300drv_rem
-BINS += $(where_am_I)$(SIS8300VENDOR_SRC)/sis8300drv_speed
-BINS += $(where_am_I)$(SIS8300VENDOR_SRC)/sis8300drv_i2c_temp
-BINS += $(where_am_I)$(SIS8300VENDOR_SRC)/tools/utils/sis8300_rescan
-BINS += $(where_am_I)$(SIS8300VENDOR_SRC)/tools/utils/sis8300_remove
-BINS += $(where_am_I)$(SIS8300VENDOR_SRC)/tools/utils/sis8300_reload
+# Exclude objs, srcs, dep files
+FILTER = %.o %.c %.d
+# Whether there are files or not, driver.Makefile doesn't return "No rule to make target"
+#
+BINS += $(filter-out $(FILTER), $(wildcard $(where_am_I)$(SIS8300VENDOR_SRC)/sis8300drv_*))
+BINS += $(wildcard $(where_am_I)$(SIS8300VENDOR_SRC)/tools/utils/sis8300_*)
 
 ## This RULE should be used in case of inflating DB files 
 ## db rule is the default in RULES_DB, so add the empty one
