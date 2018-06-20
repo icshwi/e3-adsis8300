@@ -12,8 +12,6 @@ make init
 make modules
 make modules_install
 make setup
-make setup_clean
-
 
 make build
 
