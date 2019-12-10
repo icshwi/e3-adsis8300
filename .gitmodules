@@ -1,4 +1,4 @@
 [submodule "adsis8300"]
 	path = adsis8300
-	url = https://github.com/jeonghanlee/adsis8300
-	ignore = all
+	url = https://gitlab.esss.lu.se/beam-diagnostics/bde/epics/modules/adsis8300.git
+	ignore = dirty

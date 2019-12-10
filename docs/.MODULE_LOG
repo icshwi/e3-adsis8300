@@ -1,16 +1,31 @@
 >>
-Script is used     : create_e3_modules.bash
-Script Path        : /home/jhlee/e3/tools/template_gen
-User               : jhlee
-Log Time           : 2018May06-2229-07CEST
-e3 repo Hash       : 6fc8fa0
+Script is used     : e3TemplateGenerator.bash
+Script Path        : /home/joaopaulomartins/devspace/e3-tools/e3TemplateGenerator
+Script Version     : 1.0.8
+Script Run Time    : 2019Dec10-1621-33CET
+User               : joaopaulomartins
+e3-tools Hash      : bf03d40
+>>
+>> git diff 
+
+>>
+>> git diff --cached
+
+>>
+>> git diff HEAD
+
+
+>>
+>> Your sources are located in https://gitlab.esss.lu.se/beam-diagnostics/bde/epics/modules.
+>> git submodule will be used.
 >> 
-EPICS_MODULE_NAME  :                                                        adsis8300
-E3_MODULE_SRC_PATH :                                                        adsis8300
-EPICS_MODULE_URL   :                                         https://github.com/hinxx
-E3_TARGET_URL      :                                        https://github.com/icshwi
+EPICS_MODULE_NAME  : adsis8300
+E3_MODULE_SRC_PATH : adsis8300
+EPICS_MODULE_URL   : https://gitlab.esss.lu.se/beam-diagnostics/bde/epics/modules
+E3_TARGET_URL      : https://github.com/icshwi
 >> 
-e3 module name     :                                                     e3-adsis8300
-e3 module url full :                               https://github.com/hinxx/adsis8300
-e3 target url full :                           https://github.com/icshwi/e3-adsis8300
+e3 module name     : e3-adsis8300
+e3 module url full : https://gitlab.esss.lu.se/beam-diagnostics/bde/epics/modules/adsis8300.git
+e3 target url full : https://github.com/icshwi/e3-adsis8300.git
 >> 
+e3 module is located in siteMods
