@@ -1,0 +1,20 @@
+diff --git vendor/ess/lib/sis8300drv.c vendor/ess/lib/sis8300drv.c
+index 4cc95e0..24531dd 100644
+--- vendor/ess/lib/sis8300drv.c
++++ vendor/ess/lib/sis8300drv.c
+@@ -2260,10 +2260,11 @@ int sis8300drv_reg_write(sis8300drv_usr *sisuser, unsigned address, unsigned dat
+ 
+     pthread_mutex_lock(&sisdevice->lock);
+ 
+-    if (sisdevice->armed) {
+-        pthread_mutex_unlock(&sisdevice->lock);
+-        return status_device_armed;
+-    }
++    // XXX: Allow register writes even while armed! Is this OK?!?!
++    // if (sisdevice->armed) {
++    //     pthread_mutex_unlock(&sisdevice->lock);
++    //     return status_device_armed;
++    // }
+ 
+     status = sis8300_reg_write(sisdevice->handle, (uint32_t)address, (uint32_t)data);
+     if (status) {
