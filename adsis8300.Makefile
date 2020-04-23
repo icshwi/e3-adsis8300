@@ -69,10 +69,11 @@ USR_INCLUDES += -I$(where_am_I)$(SIS8300DRV)
 # USR_CPPFLAGS += -Wno-unused-but-set-variable
 
 TEMPLATES += $(APPDB)/sis8300.template
-TEMPLATES += $(APPDB)/sis8300N.template
+TEMPLATES += $(APPDB)/sis8300-channel.template
+TEMPLATES += $(APPDB)/sis8300-evr.template
 TEMPLATES += $(APPDB)/sis8300Process.template
 TEMPLATES += $(APPDB)/sis8300ROI.template
-TEMPLATES += $(APPDB)/sis8300SigGen.template
+#TEMPLATES += $(APPDB)/sis8300SigGen.template
 TEMPLATES += $(APPDB)/sis8300Stats.template
 
 
